@@ -8,9 +8,11 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
+    [SerializeField] AudioSource playSource;
 
     public AudioClip menu;
     public AudioClip Button;
+    public AudioClip playS;
 
     private void Start()
     {
@@ -22,6 +24,10 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+    }
+    public void Playplay(AudioClip clip)
+    {
+        playSource.PlayOneShot(clip);
     }
 
 }
