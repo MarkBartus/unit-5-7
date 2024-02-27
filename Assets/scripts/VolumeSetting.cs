@@ -10,17 +10,41 @@ public class VolumeSetting : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider masSlider;
-    
-    
-    public void muteToggle(bool muted)
+
+    bool isMuted;
+
+    public static VolumeSetting instance;
+
+
+    private void Awake()
     {
-        if ( muted)
+        if (instance != null)
         {
-            myMixer.SetFloat("Music", -80);
+            Destroy(gameObject);
         }
         else
         {
-            myMixer.SetFloat("Music", 0);
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+    public void Update()
+    {
+
+    }
+    public void muteToggle(bool muted)
+    {
+        
+        if ( muted)
+        {
+            myMixer.SetFloat("Music", -80);
+            isMuted = true;
+        }
+        else
+        {
+            LoadVolume();
+            isMuted = false;
+            SetMusicVolume();
         }
     }
     private void Start()
@@ -70,9 +94,13 @@ public class VolumeSetting : MonoBehaviour
     }
     public void SetMusicVolume()
     {
-        float volume = musicSlider.value;
-        myMixer.SetFloat("Music", Mathf.Log10(volume)*20);
-        PlayerPrefs.SetFloat("musicVolume", volume);
+        if (isMuted == false)
+        {
+            float volume = musicSlider.value;
+            myMixer.SetFloat("Music", Mathf.Log10(volume) * 20);
+            PlayerPrefs.SetFloat("musicVolume", volume);
+        }
+        
     }
     private void LoadVolume()
     {
