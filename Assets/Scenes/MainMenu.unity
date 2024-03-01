@@ -205,7 +205,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2097960265}
+      - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: VolumeSetting, Assembly-CSharp
         m_MethodName: muteToggle
         m_Mode: 0
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2097960265}
+      - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: VolumeSetting, Assembly-CSharp
         m_MethodName: SetMasVolume
         m_Mode: 1
@@ -2782,7 +2782,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2097960265}
+      - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: VolumeSetting, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 1
@@ -3087,7 +3087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3095,14 +3095,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -3169,6 +3161,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e214c1598bbe0cd429e9f13ab5488b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMixer: {fileID: 24100000, guid: 7949c420e0dd48b4c98a27bfa82ef73f, type: 2}
+  musicSlider: {fileID: 764534531}
+  sfxSlider: {fileID: 1220353652}
+  masSlider: {fileID: 440070656}
 --- !u!1 &1004658672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,6 +3298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025446688}
   - component: {fileID: 1025446687}
+  - component: {fileID: 1025446689}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -3335,6 +3344,14 @@ Transform:
   - {fileID: 1246407000}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1025446689
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025446686}
+  m_Enabled: 1
 --- !u!1 &1031685856
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,7 +4384,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2097960265}
+      - m_Target: {fileID: 963194229}
         m_TargetAssemblyTypeName: VolumeSetting, Assembly-CSharp
         m_MethodName: SetSfxVolume
         m_Mode: 1
@@ -7927,7 +7944,6 @@ GameObject:
   - component: {fileID: 2097960264}
   - component: {fileID: 2097960263}
   - component: {fileID: 2097960262}
-  - component: {fileID: 2097960265}
   m_Layer: 0
   m_Name: Options Menu
   m_TagString: Untagged
@@ -8021,22 +8037,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &2097960265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097960260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e214c1598bbe0cd429e9f13ab5488b4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMixer: {fileID: 24100000, guid: 7949c420e0dd48b4c98a27bfa82ef73f, type: 2}
-  musicSlider: {fileID: 764534531}
-  sfxSlider: {fileID: 1220353652}
-  masSlider: {fileID: 440070656}
 --- !u!1 &2110821492
 GameObject:
   m_ObjectHideFlags: 0
