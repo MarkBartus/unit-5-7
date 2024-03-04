@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class VolumeSetting : MonoBehaviour
 {
+
+    
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider masSlider;
-
+    
     bool isMuted;
 
     public static VolumeSetting instance;
@@ -28,10 +30,7 @@ public class VolumeSetting : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    public void Update()
-    {
 
-    }
     public void muteToggle(bool muted)
     {
         
@@ -116,4 +115,5 @@ public class VolumeSetting : MonoBehaviour
         SetMasVolume();
         
     }
+
 }
