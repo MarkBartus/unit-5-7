@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class VolumeSetting : MonoBehaviour
 {
-
+    
     
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider musicSlider;
@@ -17,7 +17,7 @@ public class VolumeSetting : MonoBehaviour
 
     public static VolumeSetting instance;
 
-
+/*
     private void Awake()
     {
         if (instance != null)
@@ -30,7 +30,7 @@ public class VolumeSetting : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
+*/
     public void muteToggle(bool muted)
     {
         
@@ -115,5 +115,5 @@ public class VolumeSetting : MonoBehaviour
         SetMasVolume();
         
     }
-
+    
 }

@@ -15,9 +15,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip game;
     public AudioClip Button;
     public AudioClip playS;
-    /*
+    
     public static AudioManager instance;
-
+    
+    bool musicPlaying;
     
     private void Awake()
     {
@@ -31,11 +32,32 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    */
     private void Start()
     {
         musicSource.clip = menu;
+
         musicSource.Play();
+    }
+
+
+    void Update()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name == "MainMenu" && musicPlaying == false)
+        {
+            musicSource.clip = menu;
+            musicSource.Play();
+            musicPlaying = true;
+        }
+        if (currentScene.name == "Game" && musicPlaying)
+        {
+           
+            musicSource.clip = game;
+            musicSource.Play();
+            musicPlaying = false;
+        }
+    
     }
 
 
